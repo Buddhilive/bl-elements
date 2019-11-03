@@ -63,7 +63,7 @@ class BlSelect extends LitElement {
     }
 
     toggleMenu() {
-        this.shadowRoot.querySelector('.bl-dropdown-content').classList.toggle('show');
+        this.querySelector('.bl-dropdown-content').classList.toggle('show');
         this.toggleCheck = !this.toggleCheck;
         //console.log(this.shadowRoot.querySelector('.bl-dropdown-content'))
     }
@@ -71,9 +71,9 @@ class BlSelect extends LitElement {
     filterOptions() {
 
         var input, filter, a, i;
-        input = this.shadowRoot.querySelector(".bl-input");
+        input = this.querySelector(".bl-input");
         filter = input.value.toUpperCase();
-        var div = this.shadowRoot.querySelector(".bl-dropdown-content");
+        var div = this.querySelector(".bl-dropdown-content");
         a = div.querySelectorAll("option");
         for (i = 0; i < a.length; i++) {
             var txtValue = a[i].textContent || a[i].innerText;
@@ -90,11 +90,11 @@ class BlSelect extends LitElement {
         if (ev.target.tagName == 'OPTION') {
             //console.log(document);
             this.bltitle = ev.target.innerText;
-            this.shadowRoot.querySelector('.bl-value-holder').value = ev.target.value;
-            this.shadowRoot.querySelector('.bl-dropdown-content').classList.remove('show');
+            this.querySelector('.bl-value-holder').value = ev.target.value;
+            this.querySelector('.bl-dropdown-content').classList.remove('show');
             this.toggleCheck = !this.toggleCheck;
-            this.shadowRoot.querySelector(".bl-input").value = "";
-            let div = this.shadowRoot.querySelector(".bl-dropdown-content");
+            this.querySelector(".bl-input").value = "";
+            let div = this.querySelector(".bl-dropdown-content");
             let opt = div.querySelectorAll("option");
             for (let i=0; i<opt.length;i++){
                 opt[i].style.display = "";
@@ -103,13 +103,13 @@ class BlSelect extends LitElement {
     }
 
     getValue() {
-        let selectedValue = this.shadowRoot.querySelector('.bl-value-holder').value;
+        let selectedValue = this.querySelector('.bl-value-holder').value;
         return selectedValue;
     }
 
-    /* createRenderRoot() {
+    createRenderRoot() {
         return this;
-    } */
+    }
 }
 
 customElements.define('bl-select', BlSelect);
