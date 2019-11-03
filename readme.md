@@ -1,21 +1,28 @@
 ![Buddhilive Elements](https://www.buddhilive.com/wp-content/uploads/2019/06/cropped-buddhi_header-1.png)
 
-# Buddhilive Select
+# Buddhilive Elements
 
-**Buddhilive Select** (aka BL Select) is a customizable web component that extends traditional select box with support for searching.
+**Buddhilive Elements** (aka BL Elements) is a customizable web component that extends traditional HTML Components. Currently one component is available. A select box with support for searching.
 
-# Getting Started
+## Available Components
 
-To install **Buddhilive Select** straight forward without any JavaScript framework, just include the following script tag just before the "head" tag on your HTML page where you want to use the web component.
+| Component    | Description                                     | 
+| ------------ | ----------------------------------------------- |
+| `bl-select`  | `A select box with support for searching.`      |
+| `bl-buton`   | `A standard button`                             |
+
+## Getting Started
+
+To install **Buddhilive Elements** straight forward without any JavaScript framework, just include the following script tag just before the "head" tag on your HTML page where you want to use the web component.
 
 ```html
-<script src="https://unpkg.com/buddhilive-select/latest/dist/buddhilive-select.js"></script>
+<script src="https://unpkg.com/buddhilive-elements@0.0.4/dist/main.jss"></script>
 ```
 
-Then to use this component, just use it like any other HTML element:
+Then to use a BL element, just use element tag like any other HTML element:
 
 ```html
-<buddhilive-select blname="countries" bltitle='Select a Country'></buddhilive-select>
+<bl-select bl-name="countries" bl-title='Select a Country'></bl-select>
 ```
 
-> To learn more about BL Select web component, please read the [Official Documentation](https://www.buddhilive.com/)
+> To learn more about BL Elements web component, please read the [Official Documentation](https://www.buddhilive.com/)
