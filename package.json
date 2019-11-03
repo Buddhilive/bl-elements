@@ -1,8 +1,10 @@
 {
     "name": "buddhilive-elements",
-    "version": "0.0.1",
-    "description": "Customizable web component that extends traditional select box with support for searching.",
-    "main": "index.js",
+    "version": "0.0.4",
+    "description": "Customizable web components that extends traditional traditional HTML elements.",
+    "main": "dist/main.js",
+    "module": "dist/main.js",
+    "unpkg": "dist/main.js",
     "scripts": {
         "dev": "webpack-dev-server --env.mode development",
         "build": "webpack --env.mode production"
