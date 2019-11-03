@@ -1,2 +1,2 @@
 import './components/bl-button/bl-button.js';
-import './components/my-app/my-app.js'
+import './components/bl-select/bl-select.js'

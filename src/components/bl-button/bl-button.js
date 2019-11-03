@@ -5,7 +5,7 @@ class BlButton extends LitElement {
 
     static get properties() {
         return {
-            bltitle: { attribute: 'bl-title' }
+            bltitle: { attribute: 'bl-title' },
         }
     }
 
@@ -15,12 +15,18 @@ class BlButton extends LitElement {
 
     constructor() {
         super();
+
+        this.bltitle = 'Button';
     }
 
     render() {
         return html `
         <button>${this.bltitle}</button>
         `;
+    }
+
+    showTitle(btn) {
+        this.bltitle = btn;
     }
 }
 

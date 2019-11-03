@@ -2,15 +2,38 @@
 <html lang="en">
 
 <head>
-    <metacharset="UTF-8">
-        <metaname="viewport" content="width=device-width, initial-scale=1.0">
-            <metahttp-equiv="X-UA-Compatible" content="ie=edge">
-                <title>My Application</title>
-                <script src="buddhilive-components/webcomponents-loader.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Application</title>
+    <script src="buddhilive-components/webcomponents-loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <bl-button bl-title="Button"></bl-button>
+    <form>
+        <bl-button bl-title="Button"></bl-button>
+        <bl-select bl-title="Select me" bl-name="names" value="hey"></bl-select>
+    </form>
 </body>
+<script>
+    var btn = document.querySelector('bl-button');
+    var selectEl = document.querySelector('bl-select');
+    var arrayOptions = [
+        ['Sri Lanka', 'LK'],
+        ['India', 'IN'],
+        ['Pakistan', 'PK'],
+        ['Bangladesh', 'BD'],
+        ['Nepal', 'NP'],
+        ['Bhutan', 'BT'],
+        ['Afghanistan', 'AF'],
+        ['Maldives', 'MV']
+    ];
+
+    btn.addEventListener('click', function() {
+        //$('form').serializeArray();
+        selectEl.setOptions(arrayOptions);
+    });
+</script>
 
 </html>
