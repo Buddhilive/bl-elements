@@ -9,9 +9,13 @@
         "dev": "webpack-dev-server --env.mode development",
         "build": "webpack --env.mode production"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "keywords": ["javascript", "web components", "angular", "html", "react", "lit-element"],
+    "author": "Buddhilive.com",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Buddhilive/bl-select"
+    },
     "devDependencies": {
         "@webcomponents/webcomponentsjs": "^2.3.0",
         "copy-webpack-plugin": "^5.0.4",
