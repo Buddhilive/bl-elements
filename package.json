@@ -1,6 +1,6 @@
 {
     "name": "buddhilive-elements",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Customizable web components that extends traditional traditional HTML elements.",
     "main": "dist/main.js",
     "module": "dist/main.js",
@@ -9,7 +9,14 @@
         "dev": "webpack-dev-server --env.mode development",
         "build": "webpack --env.mode production"
     },
-    "keywords": ["javascript", "web components", "angular", "html", "react", "lit-element"],
+    "keywords": [
+        "javascript",
+        "web components",
+        "angular",
+        "html",
+        "react",
+        "lit-element"
+    ],
     "author": "Buddhilive.com",
     "license": "MIT",
     "repository": {
