@@ -1,4 +1,5 @@
-![Buddhilive Elements](https://www.buddhilive.com/wp-content/uploads/2019/06/cropped-buddhi_header-1.png)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/buddhilive-elements)
+
 
 # Buddhilive Elements
 
@@ -26,3 +27,6 @@ Then to use a BL element, just use element tag like any other HTML element:
 ```
 
 > To learn more about BL Elements web component, please read the [Official Documentation](https://www.buddhilive.com/)
+
+
+![Buddhilive Elements](https://www.buddhilive.com/wp-content/uploads/2019/06/cropped-buddhi_header-1.png)
