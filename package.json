@@ -21,7 +21,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Buddhilive/bl-select"
+        "url": "https://github.com/Buddhilive/bl-element"
     },
     "devDependencies": {
         "@webcomponents/webcomponentsjs": "^2.3.0",
