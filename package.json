@@ -1,6 +1,6 @@
 {
     "name": "buddhilive-elements",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Customizable web components that extends traditional traditional HTML elements.",
     "main": "dist/main.js",
     "module": "dist/main.js",
