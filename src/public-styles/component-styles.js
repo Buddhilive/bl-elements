@@ -1,7 +1,6 @@
-const $_documentContainer = document.querySelector('head');
+const $_styleContainer = document.createElement('style');
 
-$_documentContainer.innerHTML = `
-<style>
+$_styleContainer.innerHTML = `
 bl-select {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -80,7 +79,6 @@ bl-select {
 .show {
     display: block;
 }
-</style>
 `;
 
-//document.appendChild($_documentContainer.content);
+document.head.appendChild($_styleContainer);
