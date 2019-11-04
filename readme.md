@@ -16,7 +16,7 @@
 To install **Buddhilive Elements** straight forward without any JavaScript framework, just include the following script tag just before the "head" tag on your HTML page where you want to use the web component.
 
 ```html
-<script src="https://unpkg.com/buddhilive-elements@0.0.4/dist/main.jss"></script>
+<script src="https://unpkg.com/buddhilive-elements@latest/dist/main.js"></script>
 ```
 
 Then to use a BL element, just use element tag like any other HTML element:
