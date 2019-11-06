@@ -8,7 +8,8 @@ class BlSelect extends LitElement {
             bltitle: { attribute: 'bl-title' },
             blname: { attribute: 'bl-name' },
             bloptions: String,
-            toggleCheck: Boolean
+            toggleCheck: Boolean,
+            blsearch: { attribute: 'bl-search' }
         }
     }
 
@@ -25,6 +26,7 @@ class BlSelect extends LitElement {
             ['none', 'null']
         ]
         this.toggleCheck = false;
+        this.blsearch = false;
 
         /* this.shadowRoot.addEventListener('click', function(ev) {
             //console.log(ev)
@@ -42,7 +44,7 @@ class BlSelect extends LitElement {
                 </div>
             </button>
                 <div id="bl-dropdown" class="bl-dropdown-content">
-                    <input type="text" placeholder="Search.." class="bl-input" @keyup="${this.filterOptions}"/>
+                ${this.blsearch ? html `<input type="text" placeholder="Search.." class="bl-input" @keyup="${this.filterOptions}"/>`: html ``}                  
                     <input name=${this.blname} type="text" class="bl-value-holder"/>
                     ${this.bloptions.map(optn => (
             html`<option @click="${(e) => this.itemSelected(e)}" value=${optn[1]}>${optn[0]}</option>`
