@@ -1,3 +1,4 @@
+[![Version](https://img.shields.io/npm/v/buddhilive-elements.svg)](https://www.npmjs.com/package/buddhilive-elements)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/buddhilive-elements)
 
 
