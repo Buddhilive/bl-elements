@@ -8,18 +8,52 @@
     <title>My Application</title>
     <script src="buddhilive-components/webcomponents-loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        /*
+        PAGINATION
+        */
+        
+        tr.inactive {
+            display: none;
+        }
+        
+        .pager {
+            padding: 10px 0px;
+        }
+        
+        .pager .pager-item {
+            padding: 10px;
+            border: solid 1px #fff;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            background-color: #1caff6;
+            transition: .5s background-color;
+            color: White;
+        }
+        
+        .pager .pager-item:hover {
+            background-color: #0e384c;
+        }
+        
+        .pager .pager-item.selected {
+            background-color: #0e384c;
+        }
+    </style>
 </head>
 
 <body>
     <form>
         <bl-button bl-title="Button"></bl-button>
         <bl-select bl-title="Select a Country" bl-name="names" bl-search=true></bl-select>
-        <bl-select bl-title="Select"></bl-select>
+        <br/>
+        <bl-table bl-pagination="true" bl-data-perpage='4'></bl-table>
     </form>
 </body>
 <script>
     var btn = document.querySelector('bl-button');
     var selectEl = document.querySelector('bl-select');
+    var bltable = document.querySelector('bl-table');
     var arrayOptions = [
         ['Sri Lanka', 'LK'],
         ['India', 'IN'],
@@ -30,11 +64,30 @@
         ['Afghanistan', 'AF'],
         ['Maldives', 'MV']
     ];
+    var blData = {
+        tbheader: ['Country', 'Code'],
+        tbdata: [
+            ['Sri Lanka', 'LK'],
+            ['India', 'IN'],
+            ['Pakistan', 'PK'],
+            ['Bangladesh', 'BD'],
+            ['Nepal', 'NP'],
+            ['Bhutan', 'BT'],
+            ['Afghanistan', 'AF'],
+            ['Maldives', 'MV'],
+            ['United States of America', 'US']
+        ]
+    };
 
     btn.addEventListener('click', function() {
         console.log($('form').serializeArray());
         selectEl.setOptions(arrayOptions);
     });
+
+    window.onload = () => {
+        bltable.setTableData(blData);
+    }
 </script>
+
 
 </html>

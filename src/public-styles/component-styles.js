@@ -1,8 +1,8 @@
 const $_styleContainer = document.createElement('style');
 
 $_styleContainer.innerHTML = `
-bl-select {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+    font-family: sans-serif;
 }
 
 .bl-dropbtn {
@@ -79,6 +79,28 @@ bl-select {
 .show {
     display: block;
 }
+
+bl-button a {
+    padding: 0.6rem;
+    color: #fff;
+    background: #3f51b5;
+    display: inline-block;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 5px #aeaeae;
+            box-shadow: 2px 2px 5px #aeaeae;
+    border-style: none;
+    cursor: pointer;
+  }
+  
+  bl-button a:hover {
+    background: #4d5ec1;
+  }
+
+  bl-button a {
+      text-decoration: none;
+      font-size: 14px
+  }
+  
 `;
 
 document.head.appendChild($_styleContainer);

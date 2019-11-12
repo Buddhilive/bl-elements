@@ -1,7 +1,4 @@
-import { css } from 'lit-element';
-
-export const buttonStyles = css `
-button {
+bl-button {
   padding: 0.6rem;
   color: #fff;
   background: #3f51b5;
@@ -13,11 +10,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+bl-button:hover {
   background: #4d5ec1;
 }
-
-button:focus {
-  outline: none;
-}
-  `;
+/*# sourceMappingURL=styles.css.map */

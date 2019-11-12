@@ -21,12 +21,16 @@ class BlButton extends LitElement {
 
     render() {
         return html `
-        <button>${this.bltitle}</button>
+        <a>${this.bltitle}</a>
         `;
     }
 
     showTitle(btn) {
         this.bltitle = btn;
+    }
+
+    createRenderRoot() {
+        return this;
     }
 }
 

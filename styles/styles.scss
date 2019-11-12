@@ -1,0 +1,17 @@
+$primary_color: #3f51b5;
+$accent_color: #b39ddb;
+$main_text_color: #fff;
+$shadow_color:#aeaeae;
+bl-button {
+    padding: 0.6rem;
+    color: $main_text_color;
+    background: $primary_color;
+    display: inline-block;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px $shadow_color;
+    border-style: none;
+    cursor: pointer;
+    &:hover {
+        background: lighten($primary_color, 5%);
+    }
+}
