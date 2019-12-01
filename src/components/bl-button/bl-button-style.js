@@ -2,15 +2,14 @@ import { css } from 'lit-element';
 
 export const buttonStyles = css `
 button {
-  padding: 0.6rem;
-  color: #fff;
-  background: #3f51b5;
-  display: inline-block;
-  border-radius: 3px;
-  -webkit-box-shadow: 2px 2px 5px #aeaeae;
-          box-shadow: 2px 2px 5px #aeaeae;
-  border-style: none;
-  cursor: pointer;
+  background: #e5e5e5;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+button .tool--on {
+background: #aeaeae;
 }
 
 button:hover {

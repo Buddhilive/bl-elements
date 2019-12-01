@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Application</title>
     <script src="buddhilive-components/webcomponents-loader.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
         /*
         PAGINATION
@@ -39,21 +39,66 @@
         .pager .pager-item.selected {
             background-color: #0e384c;
         }
+        
+        hr {
+            margin: 12px;
+        }
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        /* Modal Content/Box */
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
     </style>
 </head>
 
 <body>
-    <form>
-        <bl-button bl-title="Button"></bl-button>
-        <bl-select bl-title="Select a Country" bl-name="names" bl-search=true></bl-select>
-        <br/>
-        <bl-table bl-pagination="true" bl-data-perpage='4'></bl-table>
-    </form>
+
+    <bl-button bl-title="Button"></bl-button>
+    <hr/>
+    <bl-editor bl-title="Namo Buddhaya"></bl-editor>
+    <hr/>
+    <bl-select bl-title="Select a Country" bl-name="names" bl-search=false></bl-select>
+
+    <div id="myModal" class="modal"></div>
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+    </div>
 </body>
 <script>
     var btn = document.querySelector('bl-button');
     var selectEl = document.querySelector('bl-select');
-    var bltable = document.querySelector('bl-table');
+    //var bltable = document.querySelector('bl-table');
     var arrayOptions = [
         ['Sri Lanka', 'LK'],
         ['India', 'IN'],
@@ -64,7 +109,7 @@
         ['Afghanistan', 'AF'],
         ['Maldives', 'MV']
     ];
-    var blData = {
+    /* var blData = {
         tbheader: ['Country', 'Code'],
         tbdata: [
             ['Sri Lanka', 'LK'],
@@ -77,7 +122,7 @@
             ['Maldives', 'MV'],
             ['United States of America', 'US']
         ]
-    };
+    }; */
 
     btn.addEventListener('click', function() {
         console.log($('form').serializeArray());
@@ -85,7 +130,7 @@
     });
 
     window.onload = () => {
-        bltable.setTableData(blData);
+        //bltable.setTableData(blData);
     }
 </script>
 

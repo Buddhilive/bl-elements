@@ -101,6 +101,88 @@ bl-button a {
       font-size: 14px
   }
   
+  bl-editor button {
+      background: #ccc;
+      border: none;
+      padding: 0.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  bl-editor button:hover {
+    background: #039be5;
+  }
+
+  bl-editor .tool--on {
+    background: #039be5;
+  }
+
+  .material-icons {
+      font-size: 18px;
+  }
+
+  .bl--editor {
+    border: 1px solid #039be5;
+    margin-top: 13px;
+    border-radius: 5px;
+    padding: 12px;
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.bl--editor:focus {
+    outline: none;
+}
+
+.bl--editor img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+.bl--editor-tools {
+    padding: 5px 5px 5px 5px;
+    border: 2px solid #dfdfdf;
+    border-radius: 5px;
+    background: #dfdfdf;
+}
+
+.bl--toolbar-seperator {
+    border-right: 1px solid #444;
+    margin-right: 4px;
+    margin-left: 4px;
+    padding-top: 1rem;
+    display: inline-flex;
+}
+
+.bl--toolbar-label {
+    background: #dfdfdf;
+}
+
+.bl--toolbar-label:hover {
+    background: #dfdfdf;
+}
+
+.bl--post-title-input {
+    border: 3px solid #dfdfdf;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 12px;
+    width: 98.5%;
+    height: 1rem;
+}
+
+.bl--post-title-input:focus {
+    outline:none;
+}
+}
+
+  }
 `;
 
 document.head.appendChild($_styleContainer);
