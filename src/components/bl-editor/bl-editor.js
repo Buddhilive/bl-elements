@@ -17,7 +17,9 @@ class BlEditor extends LitElement {
     constructor() {
         super();
 
-        this.blpopup = "";
+        this.blpopup = () => {
+            this.inserPhoto();
+        };
 
         //onspot editor
         /* this.bltitle = 'Button';
@@ -60,7 +62,7 @@ class BlEditor extends LitElement {
         <button class="material-icons bl--title-button" @click="${(e) =>this.formatTitle(6)}">filter_6</button> 
         <span class="bl--toolbar-seperator"></span>
         <button class="material-icons bl--insert-link-button" @click="${this.insertLink}">insert_link</button>
-        <button class="material-icons bl--insert-photo-button" @click="${this.inserPhoto}">insert_photo</button>
+        <button class="material-icons bl--insert-photo-button" @click="${this.blpopup}">insert_photo</button>
 
     </div>
     <div class="center">
@@ -130,29 +132,31 @@ class BlEditor extends LitElement {
     }
 
     insertLink() {
+        document.querySelector('.bl--insert-link-button').blur();
         var url = prompt("Enter the URL");
         document.execCommand("createLink", false, url);
     }
 
     inserPhoto() {
-        document.querySelector('.bl--editor').focus();
-        /* var url = prompt("Enter the URL");
-        document.execCommand("insertImage", false, url); */
-        if (this.blpopup === "") {
+        document.querySelector('.bl--insert-photo-button').blur();
+        /* if (this.blpopup === "") {
             var blWindow = window.open("");
             blWindow.document.write("<p>This Option is not Configured</p>");
         } else {
             var blWindow = window.open(this.blpopup);
             console.log(blWindow.document);
-            /* blWindow.document.querySelector('.bl-get-image-url').onclick = () => {
+            blWindow.document.querySelector('.bl-get-image-url').onclick = () => {
                 var imgUrl = blWindow.document.querySelector('.bl-image-url-holder').innerHTML;
                 document.execCommand("insertImage", false, imgUrl);
                 console.log("success");
-            }; */
-        }
+            };
+        } */
+        var blWindow = window.open("");
+        blWindow.document.write("<p>This Option is not Configured</p>");
     }
 
     insertPhotoFromURL(imageURL) {
+        document.querySelector('.bl--insert-photo-button').blur();
         document.querySelector('.bl--editor').focus();
         document.execCommand("insertImage", false, imageURL);
     }
