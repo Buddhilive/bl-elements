@@ -142,7 +142,12 @@ class BlEditor extends LitElement {
             blWindow.document.write("<p>This Option is not Configured</p>");
         } else {
             var blWindow = window.open(this.blpopup);
-            console.log(blWindow.document);
+            document.querySelector('.bl--insert-photo-button').blur();
+            document.querySelector('.bl--editor').focus();
+            var imageURL = prompt("Enter Image the URL");
+            document.execCommand("insertImage", false, imageURL);
+            blWindow.close();
+            //console.log(blWindow.document);
             /* blWindow.document.querySelector('.bl-get-image-url').onclick = () => {
                 var imgUrl = blWindow.document.querySelector('.bl-image-url-holder').innerHTML;
                 document.execCommand("insertImage", false, imgUrl);
