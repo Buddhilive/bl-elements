@@ -142,10 +142,7 @@ class BlEditor extends LitElement {
             blWindow.document.write("<p>This Option is not Configured</p>");
         } else {
             var blWindow = window.open("");
-            blWindow.document.write(
-                '<button class="bl-get-image-url">Insert Image</button>' +
-                '<iframe class="bl-image-iframe" src="' + this.blpopup + '"></iframe>'
-            );
+            blWindow.document.write(this.blpopup);
             document.querySelector('.bl--insert-photo-button').blur();
             document.querySelector('.bl--editor').focus();
             blWindow.document.querySelector('.bl-get-image-url').onclick = () => {
@@ -157,7 +154,7 @@ class BlEditor extends LitElement {
                 } else {
                     document.execCommand("insertImage", false, imgUrl);
                     console.log("success");
-                    blWindow.close();
+                    window.close();
                 }
             };
             //var imageURL = prompt("Enter Image the URL");
