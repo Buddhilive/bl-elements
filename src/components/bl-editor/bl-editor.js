@@ -143,7 +143,7 @@ class BlEditor extends LitElement {
         } else {
             var blWindow = window.open("");
             blWindow.document.write(
-                '<button class="bl-get-image-url">Get Link</button>' +
+                '<button class="bl-get-image-url">Insert Image</button>' +
                 '<iframe class="bl-image-iframe" src="' + this.blpopup + '"></iframe>'
             );
             document.querySelector('.bl--insert-photo-button').blur();
@@ -157,6 +157,7 @@ class BlEditor extends LitElement {
                 } else {
                     document.execCommand("insertImage", false, imgUrl);
                     console.log("success");
+                    blWindow.close();
                 }
             };
             //var imageURL = prompt("Enter Image the URL");
