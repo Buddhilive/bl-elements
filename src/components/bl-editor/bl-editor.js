@@ -17,7 +17,7 @@ class BlEditor extends LitElement {
     constructor() {
         super();
 
-        this.blpopup = null;
+        this.blpopup = "";
 
         //onspot editor
         /* this.bltitle = 'Button';
@@ -137,25 +137,25 @@ class BlEditor extends LitElement {
 
     inserPhoto() {
         document.querySelector('.bl--insert-photo-button').blur();
-        /* if (this.blpopup === "") {
+        if (this.blpopup === "") {
             var blWindow = window.open("");
             blWindow.document.write("<p>This Option is not Configured</p>");
         } else {
             var blWindow = window.open(this.blpopup);
             console.log(blWindow.document);
-            blWindow.document.querySelector('.bl-get-image-url').onclick = () => {
+            /* blWindow.document.querySelector('.bl-get-image-url').onclick = () => {
                 var imgUrl = blWindow.document.querySelector('.bl-image-url-holder').innerHTML;
                 document.execCommand("insertImage", false, imgUrl);
                 console.log("success");
-            };
-        } */
-        if (this.blpopup) {
+            }; */
+        }
+        /* if (this.blpopup) {
             this.blpopup = new Function(this.blpopup);
             this.blpopup();
         } else {
             var blWindow = window.open("");
             blWindow.document.write("Not Configured!");
-        }
+        } */
     }
 
     insertPhotoFromURL(imageURL) {
