@@ -6,7 +6,7 @@ class BlEditor extends LitElement {
 
     static get properties() {
         return {
-            blpopup: { attribute: 'bl-popup' },
+            blpopup: { attribute: 'bl-popup' }
         }
     }
 
@@ -17,9 +17,7 @@ class BlEditor extends LitElement {
     constructor() {
         super();
 
-        this.blpopup = () => {
-            this.inserPhoto();
-        };
+        this.blpopup = null;
 
         //onspot editor
         /* this.bltitle = 'Button';
@@ -62,7 +60,7 @@ class BlEditor extends LitElement {
         <button class="material-icons bl--title-button" @click="${(e) =>this.formatTitle(6)}">filter_6</button> 
         <span class="bl--toolbar-seperator"></span>
         <button class="material-icons bl--insert-link-button" @click="${this.insertLink}">insert_link</button>
-        <button class="material-icons bl--insert-photo-button" @click="${this.blpopup}">insert_photo</button>
+        <button class="material-icons bl--insert-photo-button" @click="${this.inserPhoto}">insert_photo</button>
 
     </div>
     <div class="center">
@@ -151,8 +149,13 @@ class BlEditor extends LitElement {
                 console.log("success");
             };
         } */
-        var blWindow = window.open("");
-        blWindow.document.write("<p>This Option is not Configured</p>");
+        if (this.blpopup) {
+            this.blpopup = new Function(this.blpopup);
+            this.blpopup();
+        } else {
+            var blWindow = window.open("");
+            blWindow.document.write("Not Configured!");
+        }
     }
 
     insertPhotoFromURL(imageURL) {
