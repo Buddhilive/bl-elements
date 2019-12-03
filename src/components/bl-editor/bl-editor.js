@@ -1,12 +1,13 @@
 import { LitElement, html, css } from "lit-element";
-import { bleditor_style } from "./bl-editor-style";
-import '../bl-select/bl-select';
+import { blDummyImage } from "./bl-dummy-image";
+import '../bl-button/bl-button';
 
 class BlEditor extends LitElement {
 
     static get properties() {
         return {
-            blpopup: { attribute: 'bl-popup' }
+            blpopup: { attribute: 'bl-popup' },
+            bldummyImg: String
         }
     }
 
@@ -18,6 +19,8 @@ class BlEditor extends LitElement {
         super();
 
         this.blpopup = "";
+
+        this.bldummyImg = blDummyImage;
 
         //onspot editor
         /* this.bltitle = 'Button';
@@ -60,11 +63,19 @@ class BlEditor extends LitElement {
         <button class="material-icons bl--title-button" @click="${(e) =>this.formatTitle(6)}">filter_6</button> 
         <span class="bl--toolbar-seperator"></span>
         <button class="material-icons bl--insert-link-button" @click="${this.insertLink}">insert_link</button>
-        <button class="material-icons bl--insert-photo-button" @click="${this.inserPhoto}">insert_photo</button>
+        <button class="material-icons bl--insert-photo-button" @click="${this.insertPhotoFromURL}">insert_photo</button>
 
     </div>
     <div class="center">
         <div class="bl--editor" contenteditable>
+        </div>
+    </div>
+    <div class="bl--image-uploader-overlay">
+        <div class="bl--image-uploader-popup">
+            <input id="bl--upload-file" type="file"><br>
+            <img class="bl--image-uploader-preview" src="${this.bldummyImg}" height="200" alt="Image preview...">
+            <bl-button id="bl--insert-file" bl-title="Insert Image"></bl-button>
+            <bl-button id="bl--cancel-btn" bl-title="Cancel"></bl-button>
         </div>
     </div>
         `;
@@ -157,29 +168,47 @@ class BlEditor extends LitElement {
                     window.close();
                 }
             };
-            //var imageURL = prompt("Enter Image the URL");
-            //document.execCommand("insertImage", false, imageURL);
-            //blWindow.close();
-            //console.log(blWindow.document);
-            /* blWindow.document.querySelector('.bl-get-image-url').onclick = () => {
-                var imgUrl = blWindow.document.querySelector('.bl-image-url-holder').innerHTML;
-                document.execCommand("insertImage", false, imgUrl);
-                console.log("success");
-            }; */
         }
-        /* if (this.blpopup) {
-            this.blpopup = new Function(this.blpopup);
-            this.blpopup();
-        } else {
-            var blWindow = window.open("");
-            blWindow.document.write("Not Configured!");
-        } */
     }
 
-    insertPhotoFromURL(imageURL) {
-        document.querySelector('.bl--insert-photo-button').blur();
-        document.querySelector('.bl--editor').focus();
-        document.execCommand("insertImage", false, imageURL);
+    insertPhotoFromURL() {
+        const imageUploadWindow = this.querySelector('.bl--image-uploader-overlay');
+        const imageUploadBtn = imageUploadWindow.querySelector('#bl--upload-file');
+        const imageInsertBtn = imageUploadWindow.querySelector('#bl--insert-file');
+        const cancelBtn = imageUploadWindow.querySelector('#bl--cancel-btn');
+        const previewImg = imageUploadWindow.querySelector('img');
+        let imageBlobUrl = "";
+
+        imageUploadWindow.style.display = 'block';
+
+        imageUploadBtn.onchange = () => {
+            var oploadedFile = imageUploadWindow.querySelector('input[type=file]').files[0];
+            var readerFile = new FileReader();
+
+            readerFile.addEventListener("load", function() {
+                imageBlobUrl = readerFile.result;
+                previewImg.src = imageBlobUrl;
+            }, false);
+
+            if (oploadedFile) {
+                readerFile.readAsDataURL(oploadedFile);
+            }
+        }
+
+        imageInsertBtn.onclick = () => {
+            this.editorFocus(this.querySelector('.bl--editor'));
+            document.execCommand("insertImage", false, imageBlobUrl);
+            imageUploadWindow.style.display = 'none';
+            previewImg.src = this.bldummyImg;
+        }
+
+        cancelBtn.onclick = () => {
+            imageUploadWindow.style.display = 'none';
+            this.editorFocus(this.querySelector('.bl--editor'));
+            previewImg.src = this.bldummyImg;
+        }
+
+        /*  */
     }
 
     getEditorData() {
@@ -193,15 +222,22 @@ class BlEditor extends LitElement {
         //console.log(postData);
     }
 
-    editorFocus() {
-        var editor = document.querySelector('.bl--editor'),
-            blselctor = window.getSelection(),
-            blrange = document.createRange(),
-            rangeCount = editor.childElementCount + 2;
-        blrange.setStart(editor, rangeCount);
-        blrange.setEnd(editor, rangeCount);
-        blselctor.removeAllRanges();
-        blselctor.addRange(blrange);
+    editorFocus(el) {
+        el.focus();
+        if (typeof window.getSelection != "undefined" &&
+            typeof document.createRange != "undefined") {
+            var range = document.createRange();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            var sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        } else if (typeof document.body.createTextRange != "undefined") {
+            var textRange = document.body.createTextRange();
+            textRange.moveToElementText(el);
+            textRange.collapse(false);
+            textRange.select();
+        }
     }
 
     createRenderRoot() {

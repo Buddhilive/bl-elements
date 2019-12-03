@@ -3,6 +3,7 @@ const $_styleContainer = document.createElement('style');
 $_styleContainer.innerHTML = `
 body {
     font-family: sans-serif;
+    margin: 0;
 }
 
 .bl-dropbtn {
@@ -180,6 +181,42 @@ bl-button a {
 .bl--post-title-input:focus {
     outline:none;
 }
+
+.bl--image-uploader-overlay{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+
+.bl--image-uploader-popup {
+    background: #fff;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.bl--image-uploader-preview {
+    display: block;
+    margin: 12px auto;
+}
+
+.bl--upload-file {
+    display: block;
+    margin: 10px auto;
+}
+
+#bl--cancel-btn a {
+    background: #dfdfdf;
+    color: #000;
 }
 
   }
