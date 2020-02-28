@@ -31,4 +31,4 @@ Then to use a BL element, just use element tag like any other HTML element:
 > To learn more about BL Elements web component, please read the [Official Documentation](https://www.buddhilive.com/)
 
 
-![Buddhilive Elements](https://www.buddhilive.com/wp-content/uploads/2019/06/cropped-buddhi_header-1.png)
+![Buddhilive Elements](https://1.bp.blogspot.com/-Xd7kc-HQYSw/XiKUn_WFHMI/AAAAAAAAKJA/GHRbLCVCHhomKShAdOziJLUm-WCvS5AtQCLcBGAsYHQ/s1600/buddhi_Cognitive_header_2020.png)
