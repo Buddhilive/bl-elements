@@ -1,102 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>My Application</title>
     <script src="buddhilive-components/webcomponents-loader.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <style>
-        /*
-        PAGINATION
-        */
-        
-        tr.inactive {
-            display: none;
-        }
-        
-        .pager {
-            padding: 10px 0px;
-        }
-        
-        .pager .pager-item {
-            padding: 10px;
-            border: solid 1px #fff;
-            text-align: center;
-            display: inline-block;
-            cursor: pointer;
-            background-color: #1caff6;
-            transition: .5s background-color;
-            color: White;
-        }
-        
-        .pager .pager-item:hover {
-            background-color: #0e384c;
-        }
-        
-        .pager .pager-item.selected {
-            background-color: #0e384c;
-        }
-        
-        hr {
-            margin: 12px;
-        }
-        /* The Modal (background) */
-    </style>
-</head>
-
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script src="public/app.js" defer></script>
+    <link rel="stylesheet" href="public/styles.css">
+  </head>
+  <body>
     <bl-button bl-title="Button"></bl-button>
-    <hr/>
+    <hr />
     <bl-editor bl-popup="http://localhost:8080/"></bl-editor>
-    <hr/>
-    <bl-select bl-title="Select a Country" bl-name="names" bl-search=false></bl-select>
-</body>
-<script>
-    var btn = document.querySelector('bl-button');
-    var selectEl = document.querySelector('bl-select');
-    //var bltable = document.querySelector('bl-table');
-    var arrayOptions = [
-        ['Sri Lanka', 'LK'],
-        ['India', 'IN'],
-        ['Pakistan', 'PK'],
-        ['Bangladesh', 'BD'],
-        ['Nepal', 'NP'],
-        ['Bhutan', 'BT'],
-        ['Afghanistan', 'AF'],
-        ['Maldives', 'MV']
-    ];
-    /* var blData = {
-        tbheader: ['Country', 'Code'],
-        tbdata: [
-            ['Sri Lanka', 'LK'],
-            ['India', 'IN'],
-            ['Pakistan', 'PK'],
-            ['Bangladesh', 'BD'],
-            ['Nepal', 'NP'],
-            ['Bhutan', 'BT'],
-            ['Afghanistan', 'AF'],
-            ['Maldives', 'MV'],
-            ['United States of America', 'US']
-        ]
-    }; */
-
-    btn.addEventListener('click', function() {
-        console.log($('form').serializeArray());
-        selectEl.setOptions(arrayOptions);
-    });
-
-    function showMsg() {
-        console.log('hello');
-    }
-
-    window.onload = () => {
-        //bltable.setTableData(blData);
-    }
-</script>
-
-
+    <hr />
+    <bl-select
+      bl-title="Select a Country"
+      bl-name="names"
+      bl-search="false"
+    ></bl-select>
+  </body>
 </html>

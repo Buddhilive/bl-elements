@@ -1,0 +1,30 @@
+tr.inactive {
+  display: none;
+}
+
+.pager {
+  padding: 10px 0px;
+}
+
+.pager .pager-item {
+  padding: 10px;
+  border: solid 1px #fff;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #1caff6;
+  transition: 0.5s background-color;
+  color: White;
+}
+
+.pager .pager-item:hover {
+  background-color: #0e384c;
+}
+
+.pager .pager-item.selected {
+  background-color: #0e384c;
+}
+
+hr {
+  margin: 12px;
+}
